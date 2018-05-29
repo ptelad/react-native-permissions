@@ -60,7 +60,7 @@ static NSString* RNPDidAskForNotification = @"RNPDidAskForNotification";
 
     if (self.completionHandler) {
         //for some reason, checking permission right away returns denied. need to wait a tiny bit
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             self.completionHandler([self.class getStatus]);
             self.completionHandler = nil;
         });
